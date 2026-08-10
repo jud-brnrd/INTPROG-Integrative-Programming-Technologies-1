@@ -38,7 +38,7 @@ $team_members = [
     ],
     [
         "name" => "Dianne Claire Redulosa",
-        "img" => "Dianne.png",
+        "img" => "Dianne.jpg",
         "img_class" => "",
         "quote" => '"Tamad na Artist"'
     ]
