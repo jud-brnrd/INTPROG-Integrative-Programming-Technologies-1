@@ -119,7 +119,6 @@ $team_members = [
     position: relative;
   }
 
-  /* Logos on top corners */
   .page-logo {
     position: fixed;
     top: 25px;
@@ -137,7 +136,6 @@ $team_members = [
     right: 25px;
   }
 
-  /* Main Container */
   .container {
     width: 100%;
     max-width: 1250px;
@@ -147,7 +145,6 @@ $team_members = [
     align-items: center;
   }
 
-  /* Header Box */
   .title-card {
     background-color: #ffffff;
     border: 2px solid #002b66;
@@ -171,7 +168,6 @@ $team_members = [
     margin-bottom: 12px;
   }
 
-  /* Search Input Field */
   #searchInput {
     padding: 8px 15px;
     width: 100%;
@@ -183,7 +179,6 @@ $team_members = [
     text-align: center;
   }
 
-  /* Group Outline Box */
   .team-box {
     border: 3px solid #000000;
     border-radius: 16px;
@@ -196,7 +191,6 @@ $team_members = [
     width: 100%;
   }
 
-  /* Member Card */
   .card {
     background-color: #ffffff;
     border: 2px solid #002b66;
@@ -211,7 +205,6 @@ $team_members = [
     overflow: hidden;
   }
 
-  /* Standard 1x1 Photo Frame */
   .card-img {
     width: 150px;
     height: 150px;
