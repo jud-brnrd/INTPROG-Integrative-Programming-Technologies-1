@@ -4,7 +4,7 @@ $team_members = [
         "name" => "Jude Bernardo",
         "img" => "Jude.jpg",
         "img_class" => "", 
-        "quote" => '"I see myself. I see myself. I see myself in the mirror. We see ourselvees. We see ourselvees. We see ourselvees in the mirror. You see yourself. You see yourself. You see yourself in the mirror."'
+        "quote" => '"I see myself. I see myself. I see myself in the mirror."'
     ],
     [
         "name" => "Wish Zaragoza",
