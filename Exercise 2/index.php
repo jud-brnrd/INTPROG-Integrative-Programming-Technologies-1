@@ -103,7 +103,7 @@ $team_members = [
       <h3><?= $team_members[$i]['name'] ?></h3>
       <p class="quote"><?= $team_members[$i]['quote'] ?></p>
 
-      <button class="toggle-btn" onclick="toggleDetails(this)"><span>▼</span></button>
+      <button class="toggle-btn" onclick="toggleDetails(this)"><span>▲</span></button>
 
       <div class="extra-info">
         <p><?= $team_members[$i]['info'] ?></p>
