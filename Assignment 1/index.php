@@ -52,9 +52,9 @@ if ($grade <= 1.00) {
 echo "<br>";
 
 // switch statement - selects one of many blocks of code to be executed
-$menu = 3;
+$ulam = 3;
 
-switch ($menu) {
+switch ($ulam) {
     case 1:
         echo "Adobo";
         break;
