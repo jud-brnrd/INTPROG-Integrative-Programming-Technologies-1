@@ -12,7 +12,7 @@ echo "<br>";
 $age = 22;
 
 if ($age < 18) {
-    echo "Too young enjoy your childhood.";
+    echo "Discover your purpose in life.";
 } else {
     echo "Time to lock in twin";
 }
