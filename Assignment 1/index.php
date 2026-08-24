@@ -1,20 +1,20 @@
 <?php
 
 // if statement - executes some code if one condition is true
-$age = 20;
+$name = "Jude";
 
-if ($age >= 18) {
-    echo "You are an adult.";
+if ($name == "Jude") {
+    echo "Hey Jude.";
 }
 echo "<br>";
 
 // if...else statement - executes some code if a condition is true and another code if that condition is false
-$number = 10;
+$age = 22;
 
-if ($number % 2 == 0) {
-    echo "The number is even.";
+if ($age < 18) {
+    echo "Too young enjoy your childhood.";
 } else {
-    echo "The number is odd.";
+    echo "Time to lock in twin";
 }
 echo "<br>";
 
@@ -52,26 +52,26 @@ if ($grade <= 1.00) {
 echo "<br>";
 
 // switch statement - selects one of many blocks of code to be executed
-$day = 3;
+$menu = 3;
 
-switch ($day) {
+switch ($menu) {
     case 1:
-        echo "Monday";
+        echo "Adobo";
         break;
     case 2:
-        echo "Tuesday";
+        echo "Sinigang";
         break;
     case 3:
-        echo "Wednesday";
+        echo "Adobong Sitaw";
         break;
     case 4:
-        echo "Thursday";
+        echo "Dinosaour Egg";
         break;
     case 5:
-        echo "Friday";
+        echo "Paksiw";
         break;
     default:
-        echo "Weekend";
+        echo "Fried Chicken";
 }
 
 ?>
