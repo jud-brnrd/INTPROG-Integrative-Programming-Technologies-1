@@ -10,6 +10,8 @@ $team_members = [
 ];
 
   $member = isset($_GET['member']) ? $_GET['member'] : '';
+
+  $search = isset($_GET['search']) ? $_GET['search'] : '';
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,9 +32,16 @@ $team_members = [
       <h2>GROUP 4</h2>
     </div>
 
+    <form method="GET"> 
+      <input type="text" name="search" placeholder="Search member..." value="<?= $search ?>" > 
+      <button type="submit"> Search </button> 
+    </form>
+
     <div class="team-box">
   <?php for ($i = 0; $i < count($team_members); $i++): ?>
 
+    <?php if ( $search == '' || stripos($team_members[$i]['name'], $search) !== false ): ?>
+      
     <div class="card">
 
     <img src="<?= $team_members[$i]['img'] ?>"
@@ -41,15 +50,7 @@ $team_members = [
 
     <h3><?= $team_members[$i]['name'] ?></h3>
 
-    <p class="quote"><?= $team_members[$i]['quote'] ?></p>
-
-    <!--GET form-->
-    <form method="GET">
-        <input type="hidden" name="member" value="<?= $team_members[$i]['name'] ?>">
-        <button type="submit" class="select-btn">
-            Select Member
-        </button>
-    </form>
+    <p class="quote"><?= $team_members[$i]['quote'] ?></p>    
 
     <button class="toggle-btn" onclick="toggleDetails(this)">
         <span>▲</span>
@@ -60,6 +61,7 @@ $team_members = [
     </div>
 
 </div>
+  <?php endif; ?>
   <?php endfor; ?>
 
   <script>
@@ -67,10 +69,6 @@ $team_members = [
       btn.classList.toggle('active');
       btn.nextElementSibling.classList.toggle('open');
     }
-
-    //if (performance.navigation.type === 1 && window.location.search) {
-    //window.location.href = window.location.pathname;
-  //}
   </script>
 
 </body>
