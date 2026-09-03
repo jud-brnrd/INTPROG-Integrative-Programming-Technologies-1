@@ -1,4 +1,3 @@
-```php
 <?php
 $team_members = [
     ["name" => "Jude Bernardo", "img" => "Jude.jpg", "quote" => '"I see myself. I see myself. I see myself in the mirror."', "info" => "Role: Clutch Player <br> Specialty: Web Architecture & Systems Design"],
@@ -10,103 +9,67 @@ $team_members = [
     ["name" => "Dianne Claire Redulosa", "img" => "Dianne.jpg", "quote" => '"Tamad na Artist"', "info" => "Role: Living Legend <br> Specialty: Digital Illustration & Visual Assets"]
 ];
 
-/*
- * POST
- * Get the selected member from the POST request.
- */
-$member = isset($_POST['member']) ? $_POST['member'] : '';
+  $member = isset($_POST['member']) ? $_POST['member'] : '';
 
-/*
- * Optional: display a message when a member is selected.
- */
-if (!empty($member)) {
-    $selected_message = "You selected: " . htmlspecialchars($member);
-}
+  $search = isset($_POST['search']) ? $_POST['search'] : '';
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Meet The Team - Group 4</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Meet The Team - Group 4</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <img src="Pamantasan_ng_Lungsod_ng_Muntinlupa_logo.png"
-         alt="PLMun Logo"
-         class="page-logo logo-left">
+  <img src="Pamantasan_ng_Lungsod_ng_Muntinlupa_logo.png" alt="PLMun Logo" class="page-logo logo-left">
+  <img src="CITC_Logo.png" alt="CITCS Logo" class="page-logo logo-right">
 
-    <img src="CITC_Logo.png"
-         alt="CITCS Logo"
-         class="page-logo logo-right">
-
-    <div class="container">
-
-        <div class="title-card">
-            <h1>MEET THE TEAM</h1>
-            <h2>GROUP 4</h2>
-
-            <?php if (!empty($member)): ?>
-                <p class="selected-message">
-                    <?= $selected_message ?>
-                </p>
-            <?php endif; ?>
-        </div>
-
-        <div class="team-box">
-
-            <?php for ($i = 0; $i < count($team_members); $i++): ?>
-
-                <div class="card">
-
-                    <img src="<?= htmlspecialchars($team_members[$i]['img']) ?>"
-                         alt="<?= htmlspecialchars($team_members[$i]['name']) ?>"
-                         class="card-img">
-
-                    <h3>
-                        <?= htmlspecialchars($team_members[$i]['name']) ?>
-                    </h3>
-
-                    <p class="quote">
-                        <?= htmlspecialchars($team_members[$i]['quote']) ?>
-                    </p>
-
-                    <!-- POST form -->
-                    <form method="POST">
-
-                        <input type="hidden"
-                               name="member"
-                               value="<?= htmlspecialchars($team_members[$i]['name']) ?>">
-
-                        <button type="submit" class="select-btn">
-                            Select Member
-                        </button>
-
-                    </form>
-
-                    <button class="toggle-btn" onclick="toggleDetails(this)">
-                        <span>▲</span>
-                    </button>
-
-                    <div class="extra-info">
-                        <p><?= $team_members[$i]['info'] ?></p>
-                    </div>
-
-                </div>
-
-            <?php endfor; ?>
-
-        </div>
+  <div class="container">
+    <div class="title-card">
+      <h1>MEET THE TEAM</h1>
+      <h2>GROUP 4</h2>
     </div>
 
-    <script>
-        function toggleDetails(btn) {
-            btn.classList.toggle('active');
-            btn.nextElementSibling.classList.toggle('open');
-        }
-    </script>
+    <form method="POST"> 
+      <input type="text" name="search" placeholder="Search member..." value="<?= $search ?>" > 
+      <button type="submit"> Search </button> 
+    </form>
+
+    <div class="team-box">
+  <?php for ($i = 0; $i < count($team_members); $i++): ?>
+
+    <?php if ( $search == '' || stripos($team_members[$i]['name'], $search) !== false ): ?>
+      
+    <div class="card">
+
+    <img src="<?= $team_members[$i]['img'] ?>"
+         alt="<?= $team_members[$i]['name'] ?>"
+         class="card-img">
+
+    <h3><?= $team_members[$i]['name'] ?></h3>
+
+    <p class="quote"><?= $team_members[$i]['quote'] ?></p>    
+
+    <button class="toggle-btn" onclick="toggleDetails(this)">
+        <span>▲</span>
+    </button>
+
+    <div class="extra-info">
+        <p><?= $team_members[$i]['info'] ?></p>
+    </div>
+
+</div>
+  <?php endif; ?>
+  <?php endfor; ?>
+
+  <script>
+    function toggleDetails(btn) {
+      btn.classList.toggle('active');
+      btn.nextElementSibling.classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
-```
